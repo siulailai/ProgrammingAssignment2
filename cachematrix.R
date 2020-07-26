@@ -1,16 +1,15 @@
-## Put comments here that give an overall description of what your
-## functions do
+## These functions written in partial fulfillment of Coursera Data Science: R Programming 
 
-## Write a short comment describing this function
+## This function creates a special "matrix" object that can cache its inverse
 
 makeCacheMatrix <- function(x= matrix()){
-    inv <- NULL
-    set <- function(y){
+    inv <- NULL                             ## initialize inv as NULL; will hold value of matrix inverse 
+    set <- function(y){                     ## define the set function to assign new value of matrix in parent environment
       x <<- y
-      inv <<- NULL
+      inv <<- NULL                          ## if there is a new matrix, reset inv to NULL
     }
     get <- function() {x}
-    setInverse <- function(inverse) {inv <<- inverse}
+    setInverse <- function(inverse) {inv <<- inverse}        ## assigns value of inv in parent environment
     getInverse <- function() {inv}
     list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
